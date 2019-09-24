@@ -27,10 +27,6 @@ requirements:
 test:
   imports:
     - argh
-  requires:
-    - iocapture
-    - mock
-    - pytest
 
 about:
   home: http://github.com/neithere/argh
