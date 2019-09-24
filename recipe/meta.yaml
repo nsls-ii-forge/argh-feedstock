@@ -1,0 +1,40 @@
+{% set name = "argh" %}
+{% set version = "0.26.2" %}
+{% set file_ext = "tar.gz" %}
+{% set hash_type = "sha256" %}
+{% set hash_value = "e9535b8c84dc9571a48999094fda7f33e63c3f1b74f3e5f3ac0105a58405bb65" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}
+  {{ hash_type }}: {{ hash_value }}
+
+build:
+  noarch: python
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+
+requirements:
+  build:
+    - python
+    - pip
+  run:
+    - python
+
+test:
+  imports:
+    - argh
+  requires:
+    - iocapture
+    - mock
+    - pytest
+
+about:
+  home: http://github.com/neithere/argh
+  license: GNU Library or Lesser General Public License (LGPL)
+  license_family: LGPL
+  license_file: COPYING
+  summary: An unobtrusive argparse wrapper with natural syntax
