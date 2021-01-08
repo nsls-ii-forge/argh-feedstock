@@ -5,11 +5,9 @@ Home: http://github.com/neithere/argh
 
 Package license: GNU Library or Lesser General Public License (LGPL)
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/nsls-ii-forge/argh-feedstock/blob/master/LICENSE.txt)
 
 Summary: An unobtrusive argparse wrapper with natural syntax
-
-
 
 Current build status
 ====================
